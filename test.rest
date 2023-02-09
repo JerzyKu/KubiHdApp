@@ -1,0 +1,24 @@
+GET http://localhost:3500/kb
+
+### 
+GET http://localhost:3500/kb/63d433d3f51f904b378e7c40
+
+###
+POST http://localhost:3500/kb
+Content-Type: application/json
+
+{
+    "title": "test",
+    "body": "test test test test test test test test test test "
+}
+
+###
+DELETE http://localhost:3500/kb/63d433d3f51f904b378e7c40
+
+###
+PATCH  http://localhost:3500/kb/63d433d3f51f904b378e7c42
+Content-Type: application/json
+
+{
+    "title": "Amazing test"
+}
