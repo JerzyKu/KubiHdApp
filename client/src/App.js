@@ -1,11 +1,11 @@
 import { Routes, Route } from 'react-router-dom'
 import DashBoard from './DashBoard';
-import EditArticle from './EditArticle';
+import EditArticle from './KnowledgeBase/EditArticle';
 import Inventory from './Inventory';
-import KnowlageBase from './KnowlageBase';
+import KnowlageBase from './KnowledgeBase/KnowlageBase';
 import Navbar from './Navbar';
-import NewKnowlageBase from './NewKnowlageBase';
-import OneArticle from './OneArticle';
+import NewKnowlageBase from './KnowledgeBase/NewKnowlageBase';
+import OneArticle from './KnowledgeBase/OneArticle';
 
 //Knowledge Base
 
