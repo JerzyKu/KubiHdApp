@@ -43,6 +43,7 @@ export default function KnowlageBase() {
         title={data.title}
         body={data.body}
         id={data._id}
+        key={data._id}
         />
         ))}
     </div>
