@@ -12,7 +12,7 @@ export default function EditArticle() {
   const navigate = useNavigate()
 
   useEffect(() => {
-      axios.get('http://localhost:3500/kb/'+id)
+      axios.get(`http://localhost:3500/kb/${id}`)
       .then(function (response) {
         // handle success
         // setData(response.data)
@@ -28,7 +28,7 @@ export default function EditArticle() {
         // always executed
       });
 
-  }, [])
+  }, [id])
 
   return (
     <div>
