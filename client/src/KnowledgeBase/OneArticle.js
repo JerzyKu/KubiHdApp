@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useNavigate, useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import axios from 'axios'
 
 export default function OneArticle() {
@@ -22,7 +22,7 @@ export default function OneArticle() {
           // always executed
         });
   
-    }, [])
+    }, [id])
 
     const handleDelete = () => {
         axios.delete('http://localhost:3500/kb/'+id).then(res => {
