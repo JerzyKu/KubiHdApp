@@ -8,6 +8,11 @@ const articleSchema = new mongoose.Schema({
     body: {
         type: String,
         require: true
+    },
+    createdAt: {
+        type: Date,
+        require: true,
+        default: Date.now()
     }
 })
 
