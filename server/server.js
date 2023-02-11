@@ -7,7 +7,7 @@ const cors = require('cors')
 
 const PORT = process.env.PORT || 3500;
 app.use(cors());
-
+mongoose.set('strictQuery', false);
 mongoose.connect(process.env.DB_SRV)
 const db = mongoose.connection
 db.on('error', (e) => {console.log(e)})
