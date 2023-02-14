@@ -1,0 +1,10 @@
+POST http://localhost:3500/inventory
+Content-Type: application/json
+
+{
+    "name": "123test",
+    "serialNumber": "serialNumber"
+}
+
+###
+GET http://localhost:3500/inventory
