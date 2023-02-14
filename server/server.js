@@ -18,6 +18,7 @@ db.once('open', () => console.log('Connectet to database'))
 app.use(express.json());
 
 app.use('/kb', require('./routes/knowledgeBase.js'));
+app.use('/inventory', require('./routes/inventory.js'));
 
 
 
