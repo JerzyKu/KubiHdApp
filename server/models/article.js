@@ -3,15 +3,15 @@ const mongoose = require('mongoose')
 const articleSchema = new mongoose.Schema({
     title:{
         type: String,
-        require: true
+        required: true
     },
     body: {
         type: String,
-        require: true
+        required: true
     },
     createdAt: {
         type: Date,
-        require: true,
+        required: true,
         default: Date.now()
     }
 })
