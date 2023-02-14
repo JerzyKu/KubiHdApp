@@ -4,15 +4,15 @@ const itemSchema = new mongoose.Schema({
     serialNumber:
     {
         type: String,
-        require: true,
+        required: true,
     },
     name: {
         type: String,
-        require: true,
+        required: true,
     },
     createdAt: {
         type: Date,
-        require: true,
+        required: true,
         default: Date.now()
     }, 
     owner: {
