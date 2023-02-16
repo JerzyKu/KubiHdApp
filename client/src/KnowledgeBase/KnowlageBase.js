@@ -12,7 +12,7 @@ export default function KnowlageBase() {
       .then(function (response) {
         // handle success
         setArticles(response.data)
-    setFiltredArticles(articles)
+        setFiltredArticles(articles)
 
       })
       .catch(function (error) {
@@ -27,27 +27,27 @@ export default function KnowlageBase() {
 
   useEffect(() => {
     setFiltredArticles(articles)
-  },[articles])
+  }, [articles])
 
   function handleSearch(e) {
-    setFiltredArticles(articles.filter( el =>  el.title.includes(e.target.value) ))
+    setFiltredArticles(articles.filter(el => el.title.includes(e.target.value)))
   }
 
   return (
     <>
-    <Link to="/KnowledgeBase/new">New Knowlake Base Article</Link><br />
-    <input type="text" name="search" id="search" placeholder='search' onChange={(e) => handleSearch(e)}/>
-    <div className='articles'>
-      {filtredArticles.map((data) => (
-        <Article
-        title={data.title}
-        body={data.body}
-        id={data._id}
-        key={data._id}
-        />
+      <Link to="/KnowledgeBase/new">New Knowlake Base Article</Link><br />
+      <input type="text" name="search" id="search" placeholder='search' onChange={(e) => handleSearch(e)} />
+      <div className='articles'>
+        {filtredArticles.map((data) => (
+          <Article
+            title={data.title}
+            body={data.body}
+            id={data._id}
+            key={data._id}
+          />
         ))}
-    </div>
-        </>
+      </div>
+    </>
   );
 
 }
