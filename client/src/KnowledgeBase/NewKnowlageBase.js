@@ -30,9 +30,24 @@ export default function NewKnowlageBase() {
             <h2>NewKnowlageBase</h2>
             <form onSubmit={handleSubmit}>
                 <label htmlFor='tittle' > Tittle: </label>
-                <input type="text" name="tittle" id="tittle" value={title} onChange={e => setTitle(e.target.value)} required/><br />
+                <input
+                    type="text"
+                    name="tittle"
+                    id="tittle"
+                    value={title}
+                    onChange={e => setTitle(e.target.value)}
+                    required
+                />
+                <br />
                 <label htmlFor='body' >Body of atricle: </label>
-                <textarea id='body' value={body} onChange={e => setBody(e.target.value)} required></textarea> <br />
+                <textarea
+                    id='body'
+                    value={body}
+                    onChange={e => setBody(e.target.value)}
+                    required
+                    cols={60}
+                    rows={12}
+                /> <br />
                 <button type="submit">Save</button>
                 <button type="reset">Clear</button>
             </form>
