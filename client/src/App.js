@@ -8,6 +8,8 @@ import NewKnowlageBase from './KnowledgeBase/NewKnowlageBase';
 import OneArticle from './KnowledgeBase/OneArticle';
 import NewItem from './Inventory/NewItem';
 import OneInventory from './Inventory/OneInventory';
+import AllUsers from './users/AllUsers';
+import CreateUser from './users/CreateUser';
 
 //Knowledge Base
 
@@ -21,6 +23,8 @@ function App() {
           <Route path='/inventory' element={<Inventory />} />
           <Route path='/inventory/new' element={<NewItem/>} />
           <Route path='/inventory/:id' element={<OneInventory/>} />
+          <Route path='/users' element={<AllUsers/>} />
+          <Route path='/users/new' element={<CreateUser/>} />
           <Route path='/KnowledgeBase' element={<KnowlageBase />} />
           <Route path='/KnowledgeBase/new' element={<NewKnowlageBase />} />
           <Route path='/KnowledgeBase/:id' element={<OneArticle />} />

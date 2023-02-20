@@ -7,6 +7,7 @@ export default function Navbar() {
         <ul>
           <li><Link to="/">DashBoadrd</Link></li>
           <li><Link to="/inventory">Inventory</Link></li>
+          <li><Link to="/users">Users</Link></li>
           <li><Link to="/KnowledgeBase">Knowledge Base</Link></li>
           
         </ul>
