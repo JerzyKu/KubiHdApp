@@ -17,6 +17,7 @@ router.post('/', async (req, res) => {
     }
 })
 
+// get all 
 router.get('/', async (req, res) => {
     try {
         const items = await Item.find()
@@ -29,6 +30,16 @@ router.get('/', async (req, res) => {
 // Get one 
 router.get('/:id', getItem, async (req, res) => {
     res.json(res.item)
+})
+
+//delete one
+router.delete('/:id', getItem, async (req, res) => {
+    try {
+        await res.item.remove()
+        res.json({message: 'Delete succesfull.'})
+    } catch (error) {
+        res.status(500).message({message: error.message})
+    }
 })
 
 async function getItem(req, res, next) {

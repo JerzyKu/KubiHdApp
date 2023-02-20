@@ -24,7 +24,7 @@ export default function Inventory() {
 
   return (
     <>
-    <Link to={`/inventory/new`}> Add Item </Link> <br />
+      <Link to={`/inventory/new`}> Add Item </Link> <br />
       <table>
         <thead>
           <tr>
@@ -36,9 +36,10 @@ export default function Inventory() {
         </thead>
         <tbody>
           {items.map(el => (
-            <TableRow 
-            el={el}
-            key={el._id} />
+            <TableRow
+              el={el}
+              key={el._id}
+            />
           ))}
         </tbody>
       </table>
