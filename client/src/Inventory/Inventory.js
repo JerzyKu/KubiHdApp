@@ -36,7 +36,9 @@ export default function Inventory() {
         </thead>
         <tbody>
           {items.map(el => (
-            <TableRow el={el} />
+            <TableRow 
+            el={el}
+            key={el._id} />
           ))}
         </tbody>
       </table>
