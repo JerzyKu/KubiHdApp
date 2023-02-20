@@ -20,6 +20,7 @@ app.use(express.json());
 app.use('/kb', require('./routes/knowledgeBase.js'));
 app.use('/inventory', require('./routes/inventory.js'));
 app.use('/users', require('./routes/users.js'));
+app.use('/stats', require('./routes/stats.js'));
 
 
 
