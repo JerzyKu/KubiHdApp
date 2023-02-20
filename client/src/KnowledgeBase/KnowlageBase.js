@@ -30,13 +30,21 @@ export default function KnowlageBase() {
   }, [articles])
 
   function handleSearch(e) {
-    setFiltredArticles(articles.filter(el => el.title.includes(e.target.value)))
+    setFiltredArticles(articles.filter(el => {
+      return el.title.toLowerCase().includes(e.target.value.toLowerCase())
+    }))
   }
 
   return (
     <>
       <Link to="/KnowledgeBase/new">New Knowlake Base Article</Link><br />
-      <input type="text" name="search" id="search" placeholder='search' onChange={(e) => handleSearch(e)} />
+      <input
+        type="text"
+        name="search"
+        id="search"
+        placeholder='search'
+        onChange={(e) => handleSearch(e)}
+      />
       <div className='articles'>
         {filtredArticles.map((data) => (
           <Article
