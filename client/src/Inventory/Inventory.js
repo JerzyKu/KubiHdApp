@@ -15,12 +15,8 @@ export default function Inventory() {
       })
       .catch(err => {
         console.log(err);
-        setItems(err)
       })
-
-
   }, [])
-
 
   return (
     <>
