@@ -35,12 +35,15 @@ export default function AllUsers() {
                         </th>
                     </tr>
                 </thead>
-                {data.map(el => (
-                    <UserRow
-                        name={el.name}
-                        surname={el.surname}
-                    />
-                ))}
+                <tbody>
+                    {data.map(el => (
+                        <UserRow
+                            name={el.name}
+                            surname={el.surname}
+                        />
+                    ))}
+                </tbody>
+
             </table>
         </>
     )
