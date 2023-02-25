@@ -20,7 +20,7 @@ router.post('/', async (req, res) => {
 // get all 
 router.get('/', async (req, res) => {
     try {
-        const items = await Item.find()
+        const items = await Item.find().populate('owner')
         res.json(items)
     } catch (err) {
         res.status(500).json({ message: err.message })

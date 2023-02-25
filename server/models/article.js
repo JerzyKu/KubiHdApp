@@ -12,8 +12,19 @@ const articleSchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         required: true,
-        default: Date.now()
+        immutable: true,
+        default: () => Date.now()
+    },
+    updatedAt: {
+        type: Date,
+        required: true,
+        default: () => Date.now()
     }
+})
+
+articleSchema.pre('save', function(next) {
+    this.updatedAt = Date.now()
+    next()
 })
 
 module.exports = mongoose.model("Article", articleSchema)

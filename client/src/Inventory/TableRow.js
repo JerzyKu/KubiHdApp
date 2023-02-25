@@ -11,7 +11,7 @@ export default function TableRow({ el }) {
                 <td>{el.name}</td>
                 <td>{el.serialNumber}</td>
                 <td>{el.createdAt}</td>
-                <td>{el.owner}</td>
+                <td>{JSON.stringify(el.owner)}</td>
             </tr>
         // </Link>
     )

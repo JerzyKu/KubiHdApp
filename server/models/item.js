@@ -13,11 +13,11 @@ const itemSchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         required: true,
-        default: Date.now()
+        default: () => Date.now()
     }, 
     owner: {
-        type: String, 
-        default: "none"
+        type: mongoose.SchemaTypes.ObjectId, 
+        ref:"User"
     }
 })
 

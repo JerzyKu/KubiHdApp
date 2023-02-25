@@ -40,6 +40,7 @@ export default function AllUsers() {
                         <UserRow
                             name={el.name}
                             surname={el.surname}
+                            key={el._id}
                         />
                     ))}
                 </tbody>

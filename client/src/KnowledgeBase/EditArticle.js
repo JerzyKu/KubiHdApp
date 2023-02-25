@@ -12,7 +12,7 @@ export default function EditArticle() {
   const navigate = useNavigate()
 
   useEffect(() => {
-      axios.get(`http://localhost:3500/kb/${id}`)
+    axios.get(`http://localhost:3500/kb/${id}`)
       .then(function (response) {
         // handle success
         // setData(response.data)
@@ -21,8 +21,8 @@ export default function EditArticle() {
         // console.log('' + response);
       })
       .catch(function (error) {
-          // handle error
-          console.log(error);
+        // handle error
+        console.log(error);
       })
       .finally(function (response) {
         // always executed
@@ -30,12 +30,26 @@ export default function EditArticle() {
 
   }, [id])
 
+  function handleSave() {
+    axios
+      .patch(`http://localhost:3500/kb/${id}`, {
+        title, body
+      })
+      .then(res => {
+        console.log(res);
+        navigate(`/KnowledgeBase/${id}`)
+      })
+      .catch(err => console.log(err))
+  }
+
   return (
     <div>
       <label htmlFor="title">title: </label><br />
-      <input type="text" name="title" id="title" value={title } onChange={e => setTitle(e.target.value)}/><br />
+      <input type="text" name="title" id="title" value={title} onChange={e => setTitle(e.target.value)} /><br />
       <label htmlFor="bodyArticle"></label>
       <textarea name="bodyArticle" id="bodyArticle" cols="30" rows="10" onChange={e => setBody(e.target.value)} value={body} /><br />
+      <hr />
+      <button onClick={() => handleSave()}>Save</button>
       <button onClick={() => navigate('/KnowledgeBase/' + id)}>cancel</button>
     </div>
   )
