@@ -82,3 +82,7 @@ main {
 pre {
   white-space: pre-wrap; 
 }
+
+p.small {
+  font-size: .75rem;
+}
