@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
         const users = await User.find()
         const items = await Item.find()
         const articles = await Article.find()
-        console.log("???");
+        // console.log("???");
         res.json({
             users: users.length,
             items: items.length,
