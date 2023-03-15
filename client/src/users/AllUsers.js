@@ -23,7 +23,7 @@ export default function AllUsers() {
         <>
             <Link to="/users/new">New user</Link>
             <hr />
-            <div>{JSON.stringify(data)}</div>
+            {/* <div>{JSON.stringify(data)}</div> */}
             <table>
                 <thead>
                     <tr>
