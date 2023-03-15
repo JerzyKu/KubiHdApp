@@ -1,11 +1,12 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { } from 'react'
 import { useNavigate } from 'react-router-dom'
+import useLocalStorage from '../hooks/useLocalStorage'
 
 export default function CreateUser() {
 
-    const [name, setName] = useState('')
-    const [surname, setSurname] = useState('')
+    const [name, setName] = useLocalStorage('CreateUserName', '')
+    const [surname, setSurname] = useLocalStorage('CreateUserSurname', '')
 
     const navigate = useNavigate()
 
@@ -23,6 +24,14 @@ export default function CreateUser() {
             .catch(err => {
                 console.log(err);
             })
+            .finally(() => {
+                resetData()
+            })
+    }
+
+    function resetData() {
+        setName('');
+        setSurname('');
     }
 
     return (
@@ -46,6 +55,7 @@ export default function CreateUser() {
             />
             <hr />
             <button type="submit">Create</button>
+            <button type="reset" onClick={() => resetData()}>reset</button>
         </form>
     )
 }
