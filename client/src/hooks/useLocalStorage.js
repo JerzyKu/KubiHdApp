@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 
 function getInitialValue(key, initialValue){
-    const tempValue = localStorage.getItem(key)
-    if (tempValue) return tempValue
+    const savedValue = localStorage.getItem(key)
+    if (savedValue) return savedValue
     if (initialValue instanceof Function) return initialValue()
     return initialValue
 }
