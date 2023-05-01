@@ -21,7 +21,7 @@ export default function AllUsers() {
 
     return (
         <>
-            <Link to="/users/new">New user</Link>
+            <Link className='btn btn-primary' to="/users/new">New user</Link>
             <hr />
             {/* <div>{JSON.stringify(data)}</div> */}
             <table>

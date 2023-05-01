@@ -10,6 +10,7 @@ import NewItem from './Inventory/NewItem';
 import OneInventory from './Inventory/OneInventory';
 import AllUsers from './users/AllUsers';
 import CreateUser from './users/CreateUser';
+import PostsList from './features/posts/PostsList';
 
 //Knowledge Base
 
@@ -29,6 +30,7 @@ function App() {
           <Route path='/KnowledgeBase/new' element={<NewKnowlageBase />} />
           <Route path='/KnowledgeBase/:id' element={<OneArticle />} />
           <Route path='/KnowledgeBase/:id/edit' element={<EditArticle />} />
+          <Route path='/Blog' element={<PostsList />}/>
         </Routes>
       </main>
     </>
