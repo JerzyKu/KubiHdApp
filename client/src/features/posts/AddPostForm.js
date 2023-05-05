@@ -19,7 +19,11 @@ export default function AddPostForm() {
     const savePostClicked = () => {
         if (title && content) {
             dispatch(
-                postAdded(title, content, userId)
+                postAdded(
+                    title, 
+                    content, 
+                    userId
+                )
             )
             setTitle('')
             setContent('')
@@ -46,15 +50,7 @@ export default function AddPostForm() {
                     onChange={onTitleChange}
                 />
                 <br />
-                <label htmlFor="postContent">Content:</label>
-                <input
-                    type="text"
-                    name="postContent"
-                    id="postContent"
-                    value={content}
-                    onChange={onContentChange}
-                />
-                <br />
+
                 <label htmlFor="postAuthor">Author:</label>
                 <select 
                     name="postAuthor" 
@@ -66,6 +62,17 @@ export default function AddPostForm() {
                     { usersOptions }
                 </select>
                 <br />
+
+                <label htmlFor="postContent">Content:</label>
+                <textarea
+                    type="text"
+                    name="postContent"
+                    id="postContent"
+                    value={content}
+                    onChange={onContentChange}
+                />
+                <br />
+                
                 <button
                     type='button'
                     onClick={savePostClicked}

@@ -1,52 +1,18 @@
 import { createSlice, nanoid, createAsyncThunk } from "@reduxjs/toolkit";
-// import { sub } from "date-fns"
 import axios from 'axios'
 import { sub } from "date-fns";
-const POSTS_URL = 'https://jsonplaceholder.typicode.com/posts'
 
-// const initialState = [
-//     {
-//         id: 1,
-//         title: 'Learning Redux Toolkit',
-//         content: 'I,ve heard good things.',
-//         date: sub(new Date(), { minutes: 10 }).toISOString(),
-//         reactions: {
-//             thumbsUp: 0,
-//             wow: 0,
-//             heart: 0,
-//             rocket: 0,
-//             coffee: 0
-//         }
-//     },
-//     {
-//         id: 2,
-//         title: 'Slices... ',
-//         content: 'The more i say slice, the more i want pizza.',
-//         userId: '1',
-//         date: sub(new Date(), { minutes: 5 }).toISOString(),
-//         reactions: {
-//             thumbsUp: 0,
-//             wow: 0,
-//             heart: 0,
-//             rocket: 0,
-//             coffee: 0
-//         }
-//     }
-// ]
+const POSTS_URL = 'https://jsonplaceholder.typicode.com/posts'
 
 const initialState = {
     posts: [],
     status: 'idle', // ildle, loading, succeeded, failed
     error: null
-}
+}     
 
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
-    try {
         const response = await axios.get(POSTS_URL)
-        return [...response.data]
-    } catch (err) {
-        return err.message
-    }
+        return response.data
 })
 
 const postsSlice = createSlice({
@@ -91,11 +57,11 @@ const postsSlice = createSlice({
                 state.status = 'loading'
             })
             .addCase(fetchPosts.fulfilled, (state, action) => {
-                state.status = 'succeded'
+                state.status = 'succeeded'
                 // Adding date and reactions 
                 let min = 1
                 const loadedPosts = action.payload.map(post => {
-                    post.date = sub(new Date(), { minutes: min++ }).toISOString
+                    // post.date = sub(new Date(), { minutes: min++ }).toISOString()
                     post.reactions = {
                         thumbsUp: 0,
                         wow: 0,
@@ -103,8 +69,9 @@ const postsSlice = createSlice({
                         rocket: 0,
                         coffee: 0
                     }
+                    return post
                 })
-
+                
                 state.posts = state.posts.concat(loadedPosts)
             })
             .addCase(fetchPosts.rejected, (state, action) => {
