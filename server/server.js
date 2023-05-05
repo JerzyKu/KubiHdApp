@@ -4,6 +4,10 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose')
 const cors = require('cors')
+const  {logger} = require('./middleware/loger')
+
+//custom middleware logger 
+app.use(logger)
 
 const PORT = process.env.PORT || 3500;
 app.use(cors());
