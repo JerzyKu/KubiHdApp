@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import AddPostForm from './AddPostForm'
+// import AddPostForm from './AddPostForm'
 import PostsExcerpt from './PostsExcerpt'
 import { fetchPosts, getPostError, getPostStatus, selectAllPosts } from './postSlice'
 
@@ -34,7 +34,7 @@ export default function PostsList() {
 
     return (
         <section>
-            <AddPostForm />
+            {/* <AddPostForm /> */}
             <hr />
             <h2>Posts</h2>
             <hr />
