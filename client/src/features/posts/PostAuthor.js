@@ -9,6 +9,6 @@ export default function PostAuthor({userId}) {
     const author = users.find(user => user.id === userId)
 
     return (
-        <small style={{color: "grey", fontSize: '0.5rem'}}>by {author ? author.name : "Unknow author"}</small>
+        <small style={{color: "grey", fontSize: '0.8rem'}}>by {author ? author.name : "Unknow author"}</small>
     )
 }
