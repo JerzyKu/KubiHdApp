@@ -99,9 +99,13 @@ const postsSlice = createSlice({
     }
 })
 
-export const selectAllPosts = state => state.posts.posts
-export const getPostStatus = state => state.posts.status
-export const getPostError = state => state.posts.error
+export const selectAllPosts = (state) => state.posts.posts
+export const getPostStatus = (state) => state.posts.status
+export const getPostError = (state) => state.posts.error
+
+export const selectPostById = (state, postId) => {
+    return state.posts.posts.find(post => post.id === postId)
+}
 
 export const { postAdded, reactionAdded } = postsSlice.actions
 
