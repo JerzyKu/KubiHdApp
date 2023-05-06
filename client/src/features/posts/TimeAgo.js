@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function TimeAgo({ timestamp }) {
 
-    let timeAgo = ""
+    let timeAgo = "???"
     if ( timestamp ){
         const date = parseISO(timestamp)
         const timePeriod = formatDistanceToNow(date)
