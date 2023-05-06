@@ -11,6 +11,9 @@ import OneInventory from './Inventory/OneInventory';
 import AllUsers from './users/AllUsers';
 import CreateUser from './users/CreateUser';
 import PostsList from './features/posts/PostsList';
+import AddPostForm from './features/posts/AddPostForm';
+import SinglePostPage from './features/posts/SinglePostPage';
+import Layout from './components/Layout';
 
 //Knowledge Base
 
@@ -30,7 +33,14 @@ function App() {
           <Route path='/KnowledgeBase/new' element={<NewKnowlageBase />} />
           <Route path='/KnowledgeBase/:id' element={<OneArticle />} />
           <Route path='/KnowledgeBase/:id/edit' element={<EditArticle />} />
-          <Route path='/Blog' element={<PostsList />}/>
+
+          <Route path='Blog' element={<Layout/>}>
+            <Route index element={<PostsList />} />
+            <Route path='post' >
+              <Route index element={<AddPostForm />} />
+              <Route path=":postId" element={<SinglePostPage />} />
+            </Route>
+          </Route>
         </Routes>
       </main>
     </>
