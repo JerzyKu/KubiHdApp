@@ -8,7 +8,9 @@ export default function TimeAgo({ timestamp }) {
     if ( timestamp ){
         const date = parseISO(timestamp)
         const timePeriod = formatDistanceToNow(date)
-        timeAgo= `${timePeriod} ago`
+        timeAgo = `${timePeriod} ago`
+        // console.log('date: ', date);
+        // console.log('timestamp', timestamp);
     }
 
     return (
