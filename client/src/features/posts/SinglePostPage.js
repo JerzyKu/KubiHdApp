@@ -9,12 +9,13 @@ import { useParams } from "react-router-dom";
 const SinglePostPage = () => {
     const {postId} = useParams()
 
-    const post = useSelector((state) => selectPostById(state, Number(postId)))
+    const post = useSelector((state) => selectPostById(state, postId))
 
     if (!post) {
         return (
             <section>
                 <h2>Post not foung!</h2>
+                {postId}
             </section>
         )
     }
