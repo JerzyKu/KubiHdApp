@@ -10,13 +10,32 @@ const postSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    createdAt: {
+    date: {
         type: Date,
         required: true,
         default: () => Date.now()
     },
     reactions: {
-        type: []
+        thumbsUp: {
+            type: Number,
+            default: 0
+        },
+        wow: {
+            type: Number,
+            default: 0
+        },
+        heart: {
+            type: Number,
+            default: 0
+        },
+        rocket: {
+            type: Number,
+            default: 0
+        },
+        coffee: {
+            type: Number,
+            default: 0
+        },
     }
 })
 
