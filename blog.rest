@@ -1,0 +1,10 @@
+POST http://localhost:3500/blog
+Content-Type: application/json
+
+{
+    "title": "Zamknięty parking",
+    "body": "W dniach 20 maja do 20 czerwca, będzie zamknięty parking z powodu malowania miejsc postojowych. za utrudnenia nie przepraszamy. z wyrazami pogardy dyrektor generalny"
+}
+
+###
+GET http://localhost:3500/blog
