@@ -34,12 +34,7 @@ export default function PostsList() {
 
     return (
         <section>
-            {/* <AddPostForm /> */}
-            <hr />
-            <h2>Posts</h2>
-            <hr />
             {content}
-            
         </section>
     )
 }
