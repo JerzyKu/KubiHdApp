@@ -2,7 +2,7 @@ import { createSlice, nanoid, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios'
 import { sub } from "date-fns";
 
-const POSTS_URL = 'https://jsonplaceholder.typicode.com/posts'
+const POSTS_URL = 'http://localhost:3500/blog'
 
 const initialState = {
     posts: [],
@@ -104,7 +104,7 @@ export const getPostStatus = (state) => state.posts.status
 export const getPostError = (state) => state.posts.error
 
 export const selectPostById = (state, postId) => {
-    return state.posts.posts.find(post => post.id === postId)
+    return state.posts.posts.find(post => post._id === postId)
 }
 
 export const { postAdded, reactionAdded } = postsSlice.actions
