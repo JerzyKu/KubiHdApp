@@ -1,6 +1,6 @@
-import { createSlice, nanoid, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios'
-import { sub } from "date-fns";
+// import { sub } from "date-fns";
 
 const POSTS_URL = 'http://localhost:3500/blog'
 
@@ -31,18 +31,9 @@ const postsSlice = createSlice({
             prepare(title, content, userId) {
                 return {
                     payload: {
-                        id: nanoid(),
                         title,
                         content,
-                        date: new Date().toISOString(),
                         userId,
-                        reactions: {
-                            thumbsUp: 0,
-                            wow: 0,
-                            heart: 0,
-                            rocket: 0,
-                            coffee: 0,
-                        }
                     }
                 }
             }
@@ -63,35 +54,13 @@ const postsSlice = createSlice({
             })
             .addCase(fetchPosts.fulfilled, (state, action) => {
                 state.status = 'succeeded'
-                // Adding date and reactions 
-                let min = 1
-                const loadedPosts = action.payload.map(post => {
-                    post.date = sub(new Date(), { minutes: min++ }).toISOString()
-                    post.reactions = {
-                        thumbsUp: 0,
-                        wow: 0,
-                        heart: 0,
-                        rocket: 0,
-                        coffee: 0
-                    }
-                    return post
-                })
-                state.posts = state.posts.concat(loadedPosts)
+                state.posts = state.posts.concat(action.payload)
             })
             .addCase(fetchPosts.rejected, (state, action) => {
                 state.status = 'failed'
                 state.error = action.error.message
             })
             .addCase(addNewPost.fulfilled, (state, action) => {
-                action.payload.userId = Number(action.payload.userId)
-                action.payload.date = new Date().toISOString()
-                action.payload.reactions = {
-                    thumbsUp: 0,
-                    wow: 0,
-                    heart: 0,
-                    rocket: 0,
-                    coffee: 0
-                }
                 console.log(action.payload);
                 state.posts.push(action.payload)
             })
