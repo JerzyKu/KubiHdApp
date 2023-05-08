@@ -7,4 +7,21 @@ Content-Type: application/json
 }
 
 ###
+POST http://localhost:3500/blog
+Content-Type: application/json
+
+{
+    "title": "Zamknięta Stołówka",
+    "body": "W dniach 1 maja  do 20 maja, będzie zamknięta stołówka. za utrudnenia nie przepraszamy. \nz wyrazami pogardy dyrektor generalny"
+}
+###
+POST http://localhost:3500/blog
+Content-Type: application/json
+
+{
+    "title": "Zwiększenie podstawowj pensji",
+    "body": "w dniem 1 grudnia powiększamy pensję podstawową wszystkim pracownikom o 1%. &#10;z wyrazami pogardy dyrektor generalny"
+}
+
+###
 GET http://localhost:3500/blog
