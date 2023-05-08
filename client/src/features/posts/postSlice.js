@@ -45,7 +45,6 @@ const postsSlice = createSlice({
                 existingPost.reactions[reaction]++
             }
         }
-
     },
     extraReducers(builder) {
         builder
