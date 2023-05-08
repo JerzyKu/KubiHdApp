@@ -20,7 +20,7 @@ export default function ReactionButtons({ post }) {
                 type="button"
                 className="reactionButton"
                 onClick={() =>
-                    dispatch(reactionAdded({ postId: post.id, reaction: name}))
+                    dispatch(reactionAdded({ postId: post._id, reaction: name}))
                 }
             >
                 {emoji} {post.reactions[name]}
