@@ -76,6 +76,6 @@ export const selectPostById = (state, postId) => {
     return state.posts.posts.find(post => post._id === postId)
 }
 
-export const { postAdded, reactionAdded } = postsSlice.actions
+export const { postAdded, reactionAdded, updatePost } = postsSlice.actions
 
 export default postsSlice.reducer
