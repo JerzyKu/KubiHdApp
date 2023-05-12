@@ -3,7 +3,8 @@ Content-Type: application/json
 
 {
     "title": "Zamknięty parking",
-    "body": "W dniach 20 maja do 20 czerwca, będzie zamknięty parking z powodu malowania miejsc postojowych. za utrudnenia nie przepraszamy. z wyrazami pogardy dyrektor generalny"
+    "body": "W dniach 20 maja do 20 czerwca, będzie zamknięty parking z powodu malowania miejsc postojowych. za utrudnenia nie przepraszamy. z wyrazami pogardy dyrektor generalny",
+    "userId": 5
 }
 
 ###
@@ -12,7 +13,8 @@ Content-Type: application/json
 
 {
     "title": "Zamknięta Stołówka",
-    "body": "W dniach 1 maja  do 20 maja, będzie zamknięta stołówka. za utrudnenia nie przepraszamy. \nz wyrazami pogardy dyrektor generalny"
+    "body": "W dniach 1 maja  do 20 maja, będzie zamknięta stołówka. za utrudnenia nie przepraszamy. \nz wyrazami pogardy dyrektor generalny",
+    "userId": 2
 }
 ###
 POST http://localhost:3500/blog
@@ -20,7 +22,8 @@ Content-Type: application/json
 
 {
     "title": "Zwiększenie podstawowj pensji",
-    "body": "w dniem 1 grudnia powiększamy pensję podstawową wszystkim pracownikom o 1%. &#10;z wyrazami pogardy dyrektor generalny"
+    "body": "w dniem 1 grudnia powiększamy pensję podstawową wszystkim pracownikom o 1%. &#10;z wyrazami pogardy dyrektor generalny",
+    "userId": 1
 }
 
 ###

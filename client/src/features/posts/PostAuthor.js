@@ -6,7 +6,7 @@ export default function PostAuthor({userId}) {
 
     const users = useSelector(selectAllUsers)
 
-    const author = users.find(user => user.id === userId)
+    const author = users.find(user => String(user.id) === String(userId))
 
     return (
         <small style={{color: "grey", fontSize: '0.8rem'}}>by {author ? author.name : "Unknow author"}</small>
