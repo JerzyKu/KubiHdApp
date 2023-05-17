@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import DashBoard from './DashBoard';
 import EditArticle from './KnowledgeBase/EditArticle';
 import Inventory from './Inventory/Inventory';
@@ -43,6 +43,10 @@ function App() {
               <Route path="edit/:postId" element={<EditPostForm />} />
             </Route>
           </Route>
+
+          {/* Catch all */}
+          <Route path='*' element={<Navigate to='/' replace/>} />
+
         </Routes>
       </main>
     </>
