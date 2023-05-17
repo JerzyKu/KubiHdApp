@@ -20,6 +20,12 @@ export const addNewPost = createAsyncThunk('posts/addNewPost', async (initialPos
     return resposne.data
 })
 
+export const updatePost = createAsyncThunk('posts/updatePost', async (initialPost) => {
+    const { _id } = initialPost
+    const response = await axios.put(`${POSTS_URL}/${_id}`)
+    return response.data 
+})
+
 const postsSlice = createSlice({
     name: 'posts',
     initialState,
@@ -64,6 +70,16 @@ const postsSlice = createSlice({
                 console.log(action.payload);
                 state.posts.push(action.payload)
             })
+            .addCase(updatePost.fulfilled, (state, action) => {
+                if(!action.payload?._id){
+                    console.log("Update cannot be complete");
+                    console.log(action.payload);
+                    return
+                }
+                const { _id } = action.payload
+                const posts = state.posts.filter( post => post._id !== _id)
+                state.posts = [ ...posts, action.payload]
+            })
         // end builder
     }
 })
@@ -76,6 +92,6 @@ export const selectPostById = (state, postId) => {
     return state.posts.posts.find(post => post._id === postId)
 }
 
-export const { postAdded, reactionAdded, updatePost } = postsSlice.actions
+export const { postAdded, reactionAdded } = postsSlice.actions
 
 export default postsSlice.reducer
