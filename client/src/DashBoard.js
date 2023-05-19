@@ -22,6 +22,8 @@ export default function DashBoard() {
       Items of inventory: {data.items}
       <hr />
       Number of users: {data.users}
+      <hr />
+      Number of posts: {data.posts}
     </div>
   )
 }
