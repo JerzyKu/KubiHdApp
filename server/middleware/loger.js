@@ -1,5 +1,6 @@
 const logger = (req, res, next) => {
-    console.log(`${req.method} ${req.headers.origin} ${req.url}`);
+    const date = new Date()
+    console.log(`${date.toUTCString()} ${req.method} ${req.headers.origin} ${req.url}`);
     // console.log(req);
     next()
 }
